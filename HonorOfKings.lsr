@@ -3,12 +3,11 @@
 #!author=User
 #!date=2024-05-20
 
-DOMAIN-SUFFIX,hok-dr.intlgame.com,PROXY
-DOMAIN-SUFFIX,hok.intlgame.com,PROXY
-DOMAIN-SUFFIX,intlgame.com,PROXY
-DOMAIN-SUFFIX,sgameglobal.com,PROXY
-DOMAIN-SUFFIX,appsflyersdk.com,PROXY
-DOMAIN-KEYWORD,sgameglobal.com,PROXY
-
-IP-CIDR,183.192.65.101/16,PROXY,no-resolve
-IP-CIDR,43.132.55.55/16,PROXY,no-resolve
+DOMAIN-SUFFIX,hok-dr.intlgame.com
+DOMAIN-SUFFIX,hok.intlgame.com
+DOMAIN-SUFFIX,intlgame.com
+DOMAIN-SUFFIX,sgameglobal.com
+DOMAIN-SUFFIX,appsflyersdk.com
+DOMAIN-KEYWORD,sgameglobal.com
+IP-CIDR, 183.192.65.101/16, no-resolve
+IP-CIDR, 43.132.55.55/16, no-resolve
