@@ -1,0 +1,18 @@
+#!name=Honor of Kings Global
+#!desc=王者荣耀国际服分流规则，包含域名与IP段
+#!author=User
+#!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a4/68/38/a46838d7-5d07-3532-68c9-77ed9b74052c/AppIcon-0-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/512x512bb.jpg
+#!date=2024-05-20
+
+[Rule]
+# Domain Rules
+DOMAIN-SUFFIX,hok-dr.intlgame.com,PROXY
+DOMAIN-SUFFIX,hok.intlgame.com,PROXY
+DOMAIN-SUFFIX,intlgame.com,PROXY
+DOMAIN-SUFFIX,sgameglobal.com,PROXY
+DOMAIN-SUFFIX,appsflyersdk.com,PROXY
+DOMAIN-KEYWORD,sgameglobal.com,PROXY
+
+# IP Rules
+IP-CIDR,183.192.65.101/16,PROXY,no-resolve
+IP-CIDR,43.132.55.55/16,PROXY,no-resolve
