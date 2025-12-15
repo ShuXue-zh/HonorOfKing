@@ -3,9 +3,6 @@
 #!author=User
 #!date=2024-05-20
 
-[Rule]
-DOMAIN-SUFFIX,hok-dr.intlgame.com
-DOMAIN-SUFFIX,hok.intlgame.com
 DOMAIN-SUFFIX,intlgame.com
 DOMAIN-SUFFIX,sgameglobal.com
 DOMAIN-SUFFIX,appsflyersdk.com
