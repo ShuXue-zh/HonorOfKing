@@ -8,8 +8,8 @@
 #!tag = 分流,王者荣耀海外服
 #!date=2025-12-18 18:25:00
 
-[general]
-dns-server = 223.5.5.5, 119.29.29.29, system
+#[general]
+#dns-server = 223.5.5.5, 119.29.29.29, system
 
 [rule]
 DOMAIN-SUFFIX,intlgame.com,DIRECT
@@ -32,8 +32,8 @@ IP-CIDR,129.226.0.0/16,DIRECT,no-resolve
 IP-CIDR,101.32.0.0/16,DIRECT,no-resolve
 IP-ASN,132203,DIRECT,no-resolve
 
-[host]
-*.intlgame.com = real-ip
-*.sgameglobal.com = real-ip
-*.appsflyersdk.com = real-ip
-*.igamecj.com = real-ip
+#[host]
+#*.intlgame.com = real-ip
+#*.sgameglobal.com = real-ip
+#*.appsflyersdk.com = real-ip
+#*.igamecj.com = real-ip
