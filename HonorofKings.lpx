@@ -1,7 +1,7 @@
 #!name= 王者荣耀海外服
 #!desc= 分流王者荣耀海外服
 #!author= shuxue
-#!icon= 插件的图标
+#!icon= https://raw.githubusercontent.com/ShuXue-zh/HonorOfKing/main/HOK.jpg
 #!system = iOS,iPadOS
 #!system_version = 18
 #!loon_version = 3.3.1(372)
