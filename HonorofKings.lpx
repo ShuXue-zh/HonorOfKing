@@ -10,7 +10,6 @@
 
 [general]
 dns-server = 223.5.5.5, 119.29.29.29, system
-real-ip = *.intlgame.com,*.sgameglobal.com,*.appsflyersdk.com
 
 [rule]
 DOMAIN-SUFFIX,tencentmobile.com,DIRECT
@@ -30,3 +29,4 @@ GEOIP,CN,DIRECT
 *.intlgame.com = real-ip
 *.sgameglobal.com = real-ip
 *.appsflyersdk.com = real-ip
+*.igamecj.com = real-ip
