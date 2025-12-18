@@ -8,6 +8,9 @@
 #!tag = 分流,王者荣耀海外服
 #!date=2025-12-18 18:25:00
 
+[general]
+dns-server = 223.5.5.5, 119.29.29.29, system
+
 [rule]
 DOMAIN-SUFFIX,tencentmobile.com,DIRECT
 DOMAIN-SUFFIX,igamecj.com,DIRECT
