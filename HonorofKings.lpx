@@ -1,12 +1,12 @@
 #!name= 王者荣耀海外服
 #!desc= 分流王者荣耀海外服
 #!author= shuxue
-#!homepage= 插件首页，可在插件页面进行跳转
 #!icon= 插件的图标
 #!system = iOS,iPadOS
 #!system_version = 18
 #!loon_version = 3.3.1(372)
 #!tag = 分流,王者荣耀海外服
+#!date=2025-12-18 18:25:00
 
 [rule]
 DOMAIN-SUFFIX,tencentmobile.com,DIRECT
@@ -20,4 +20,8 @@ DOMAIN-SUFFIX,sgameglobal.com,DIRECT
 DOMAIN-SUFFIX,intlgame.com,DIRECT
 IP-CIDR,43.132.55.55/16,DIRECT,no-resolve
 IP-CIDR,183.192.65.101/16,DIRECT,no-resolve
+
 [host]
+*.intlgame.com = real-ip
+*.sgameglobal.com = real-ip
+*.appsflyersdk.com = real-ip
