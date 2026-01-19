@@ -1,0 +1,25 @@
+name: 机场流量信息
+description: 显示机场订阅剩余流量及过期时间 (多机场版)
+scriptings:
+  - generic:
+      name: SubInfo_1
+      script_url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Sub-info/Moore/Sub-info.js
+      arguments:
+        # 下方 url=后面必须填入【URL编码】后的订阅链接
+        _compat.$argument: url=你的订阅链接(需编码)&reset_day=1&title=机场一&icon=externaldrive.fill.badge.icloud&color=#FFB6C1
+
+  - generic:
+      name: SubInfo_2
+      script_url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Sub-info/Moore/Sub-info.js
+      arguments:
+        # 如果不需要第二个机场，可以删除这一段以及下方对应的 panel
+        _compat.$argument: url=你的订阅链接(需编码)&reset_day=0&title=机场二&icon=airplane&color=#87CEFA
+
+panels:
+  - name: 机场一
+    script_name: SubInfo_1
+    update_interval: 3600
+
+  - name: 机场二
+    script_name: SubInfo_2
+    update_interval: 3600
