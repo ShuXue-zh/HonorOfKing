@@ -1,25 +1,24 @@
-name: 机场流量信息
-description: 显示机场订阅剩余流量及过期时间 (多机场版)
+name: 机场流量面板
+description: 显示机场订阅流量及到期时间。请在参数设置中填入信息（URL需编码）。
+compat_arguments:
+  url: ""
+  title: "我的机场"
+  reset_day: "1"
+  icon: "externaldrive.fill.badge.icloud"
+  color: "#FFB6C1"
+compat_arguments_desc: "url: 订阅链接(必须先URL编码!) | title: 面板标题 | reset_day: 重置日(无则填0) | icon: 图标(SF Symbol) | color: 图标颜色(Hex)"
 scriptings:
   - generic:
-      name: SubInfo_1
+      name: SubInfoScript
       script_url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Sub-info/Moore/Sub-info.js
+      # 下面这一行保留作为兼容性占位，实际参数由 compat_arguments 注入
       arguments:
-        # 下方 url=后面必须填入【URL编码】后的订阅链接
-        _compat.$argument: url=你的订阅链接(需编码)&reset_day=1&title=机场一&icon=externaldrive.fill.badge.icloud&color=#FFB6C1
-
-  - generic:
-      name: SubInfo_2
-      script_url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Sub-info/Moore/Sub-info.js
-      arguments:
-        # 如果不需要第二个机场，可以删除这一段以及下方对应的 panel
-        _compat.$argument: url=你的订阅链接(需编码)&reset_day=0&title=机场二&icon=airplane&color=#87CEFA
-
+        _compat.$argument: 'true'
+      timeout: 10
 panels:
-  - name: 机场一
-    script_name: SubInfo_1
-    update_interval: 3600
-
-  - name: 机场二
-    script_name: SubInfo_2
+  - name: SubInfoPanel
+    title: 机场流量
+    content: 刷新中…
+    style: info
+    script_name: SubInfoScript
     update_interval: 3600
