@@ -1,0 +1,25 @@
+#!name=网络信息面板 𝕏（原网络信息 𝕏）
+#!desc=国内外 IP, 运营商, ASN, ORG, 位置, 质量(新增), 策略; IPv6; 入口落地; 隐私; LAN; SSID. 自己设置对应域名的分流. 支持网络变化时进行查询通知. 支持长按节点进行查询. 提供 https://net-lsp-x.com 数据接口, 参数与模块参数相同. 详细参数设置见频道说明: https://t.me/zhetengsha
+#!author=@keywos @xream https://t.me/zhetengsha
+#!homepage=https://t.me/zhetengsha
+#!openurl=https://t.me/zhetengsha
+#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
+
+[Rule]
+DOMAIN-SUFFIX,speedtest.cn,DIRECT
+DOMAIN-SUFFIX,ip.im,DIRECT
+DOMAIN-SUFFIX,ip.plus,DIRECT
+
+[Script]
+# Request
+http-request ^https?:\/\/net-lsp-x\.com script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js, timeout=120, tag=网络信息请求 𝕏
+
+# 已将 Event (network-changed) 代码删除，不再自动通知
+
+# Interaction (保留了手动查询功能)
+generic script-path=https://he2o.vercel.app/Resource/Script/IPPure.js, timeout=120,tag =网络质量查询 𝕏, img-url=leaf
+
+generic script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js, timeout=120, tag=网络信息查询 𝕏, img-url=location.circle.system
+
+[Mitm]
+hostname = net-lsp-x.com
