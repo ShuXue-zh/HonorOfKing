@@ -1,0 +1,16 @@
+#!name=AntiWebpageAD
+#!desc=拦截广告请求并清理网页空白位置
+#!author=Gemini
+
+[Rule]
+DOMAIN-KEYWORD, img.alicdn.com, REJECT
+DOMAIN-KEYWORD, monkey.cszpra.com, REJECT
+DOMAIN-KEYWORD, hongniu.ewytek.com, REJECT
+
+[Rewrite]
+# 匹配 4hu 相关的网页，在网页底部（</body>前面）注入一段 CSS 隐藏样式
+^https?:\/\/.*4hu.* response-body-replace-regex </body> "<style>img[src*='img.alicdn.com'], img[src*='cszpra.com'], img[src*='ewytek.com'], a[href*='cszpra.com'], a[href*='ewytek.com'] { display: none !important; opacity: 0 !important; width: 0 !important; height: 0 !important; }</style></body>"
+
+[Mitm]
+# 必须配置 MitM（HTTPS 解密），Loon 才能看懂并修改加密的网页代码
+hostname = *4hu*
