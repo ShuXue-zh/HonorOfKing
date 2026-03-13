@@ -7,12 +7,3 @@ DOMAIN-SUFFIX, img.alicdn.com, REJECT
 DOMAIN-SUFFIX, monkey.cszpra.com, REJECT
 DOMAIN-SUFFIX, hongniu.ewytek.com, REJECT
 
-[Rewrite]
-# 2. 修复了正则语法（加上了双引号和转义符 \/）。
-# 这次我们把隐藏代码安全地注入到网页头部 (</head>)，绝不会再导致页面全白。
-^https?:\/\/.*4hu.* response-body-replace-regex "(<\/head>)" "<style>img[src*='img.alicdn.com'], img[src*='cszpra.com'], img[src*='ewytek.com'], a[href*='cszpra.com'], a[href*='ewytek.com'] { display: none !important; width: 0px !important; height: 0px !important; opacity: 0 !important; }</style>$1"
-
-[Mitm]
-# 3. 最关键的一步：必须把这两个广告域名加上，REJECT-IMG 才能成功返回透明图片！
-# 同样，不要把 img.alicdn.com 加进来，以免影响正常 App。
-hostname = *4hu*, *cszpra.com*, *ewytek.com*
